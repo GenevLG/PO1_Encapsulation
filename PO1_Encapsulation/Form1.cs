@@ -15,10 +15,6 @@ namespace PO1_Encapsulation
 
             joueur.PointsDepuissance = 1;
             dragon.PointsDepuissance = 3;
-            //Personnage personnage = new Personnage();
-            //personnage.PointDepuissance = 5;
-            //personnage.PoinstDeVie = -10;
-            //personnage.Nom = "Litchy";
         }
 
         private void ActualiserLabel() 
@@ -34,16 +30,21 @@ namespace PO1_Encapsulation
         private void btn_attaquer_Click(object sender, EventArgs e)
         {
             dragon.PointsDeVie -= joueur.PointsDepuissance;
+            TourDragon();
             ActualiserLabel();
         }
 
         private void btn_seSoigner_Click(object sender, EventArgs e)
         {
+            joueur.PointsDeVie += 5;
+            TourDragon();
             ActualiserLabel();
         }
 
         private void btn_puissanceAttaque_Click(object sender, EventArgs e)
         {
+            joueur.PointsDepuissance++;
+            TourDragon();
             ActualiserLabel();
         }
 
@@ -51,5 +52,11 @@ namespace PO1_Encapsulation
         {
             ActualiserLabel();
         }
+
+        private void TourDragon() 
+        { 
+            joueur.PointsDeVie -= dragon.PointsDepuissance;
+        }
     }
+
 }

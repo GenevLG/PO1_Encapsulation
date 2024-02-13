@@ -9,9 +9,10 @@ namespace PO1_Encapsulation
     public class Personnage
     {
 
-        string nom;
-        int pointsDeVie;
-        int pointsDepuissance;
+        private string nom;
+        private int pointsDeVie;
+        private int pointsDepuissance;
+
 
         //Pour les protéger nos attributs : selectionner, click droit, Action rapide et refactorisation, encapsuler les champs (et utiliser la propriété)
 
@@ -33,16 +34,16 @@ namespace PO1_Encapsulation
         }
         public int PointsDepuissance { get => pointsDepuissance; set => pointsDepuissance = value; }
 
-        //public bool EstEnVie()
-        //{
-        //    get
-        //    {
-        //        if(pointsDeVie > 0) 
-        //        { 
-        //            return true;    
-        //        }
-        //        return false;   
-        //    }
-        //}
+        public bool EstEnVie
+        {
+            get
+            {
+                if (pointsDeVie > 0)
+                {
+                    return true;
+                }
+                return false;
+            }
+        }
     }
 }
